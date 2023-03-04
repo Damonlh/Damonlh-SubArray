@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class SubArray {
     /**
@@ -13,6 +15,23 @@ public class SubArray {
      * @return a sub-array of nums containing the values between start and end.
      */
     public int[] sub(int[] nums, int start, int end){
-        return null;
+
+        List<Integer> newNums = new ArrayList<Integer>();
+
+        for (int i = 0; i < nums.length; i++)
+        {
+            newNums.add(nums[i]);
+        }
+
+        newNums = newNums.subList(start, end);
+        int[] subNums = new int[newNums.size()];
+
+        for (int i = 0; i < newNums.size(); i++)
+        {
+            subNums[i] = newNums.get(i);
+        }
+
+        return subNums;
     }
+
 }
